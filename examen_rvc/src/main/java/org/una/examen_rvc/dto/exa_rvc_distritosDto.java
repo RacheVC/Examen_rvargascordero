@@ -22,5 +22,7 @@ public class exa_rvc_distritosDto {
 
     private Long id;
     private String nombre;
+    private Integer codigo;
+     private exa_rvc_cantonesDto cantones;
 
 }

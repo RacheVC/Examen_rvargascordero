@@ -5,11 +5,16 @@
  */
 package org.una.examen_rvc.entities;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,8 +36,15 @@ import lombok.ToString;
 @NoArgsConstructor
 
 @ToString
-public class exa_rvc_unidades {
-  //faltan relaciones
+public class exa_rvc_unidades implements Serializable {
+
+    @ManyToOne
+    @JoinColumn(name = "distritos_id")
+    private exa_rvc_distritos distrito;
+
+    @ManyToOne
+    @JoinColumn(name = "tipos_id")
+    private exa_rvc_tipos tipos;
 
     @Id
 
@@ -40,22 +52,19 @@ public class exa_rvc_unidades {
 
     private Long id;
 
-    @Column(name = "Nombre", length = 24)
+    @Column(name = "Nombre", length = 25)
 
     private String nombre;
 
-    @Column(name = "Código", length = 24)
+    @Column(name = "Código", length = 25)
 
-    private String Código;
-    @Column(name = "Barrio", length = 24)
+    private Integer Código;
+    @Column(name = "area", length = 24)
 
-    private String Barrio;
+    private BigDecimal area;
 
-    @Column(name = "Comunidad", length = 24)
+    @Column(name = "poblacion", length = 24)
 
-    private String Comunidad;
-    @Column(name = "Calle", length = 24)
-
-    private String Calle;
+    private BigInteger poblacion;
 
 }

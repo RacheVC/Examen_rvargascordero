@@ -18,7 +18,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class exa_rvc_provinciasDto {
+public class exa_rvc_tiposDto {
 
     private Long id;
     private String nombre;

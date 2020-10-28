@@ -11,8 +11,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +23,7 @@ import lombok.ToString;
  */
 @Entity
 
-@Table(name = "exa_rvc_cantones")
+@Table(name = "exa_rvc_tipos")
 
 @Data
 
@@ -34,11 +32,7 @@ import lombok.ToString;
 @NoArgsConstructor
 
 @ToString
-public class exa_rvc_cantones implements Serializable {
-
-    @ManyToOne
-    @JoinColumn(name = "provincias_id")
-    private exa_rvc_provincias provincia;
+public class exa_rvc_tipos implements Serializable  {
 
     @Id
 

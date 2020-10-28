@@ -24,27 +24,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.una.examen_rvc.dto.exa_rvc_unidadesDto;
-import org.una.examen_rvc.services.Iexa_rvc_unidadesService;
+import org.una.examen_rvc.dto.exa_rvc_tiposDto;
+import org.una.examen_rvc.services.Iexa_rvc_tiposService;
 
 /**
  *
  * @author rache
  */
 @RestController
-@RequestMapping("/unidades")
+@RequestMapping("/tipos")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-public class exa_rvc_unidadesController {
+public class exa_rvc_tiposController {
 
     final String MENSAJE_VERIFICAR_INFORMACION = "Debe verifiar el formato y la información de su solicitud con el formato esperado";
 
     @Autowired
-    private Iexa_rvc_unidadesService unidadesService;
+    private Iexa_rvc_tiposService tiposService;
 
     @GetMapping("/nombre/{nombre}")
     public ResponseEntity<?> findByNombre(@PathVariable(value = "nombre") String nombre) {
         try {
-            return new ResponseEntity(unidadesService.findByNombreAproximateIgnoreCase(nombre), HttpStatus.OK);
+            return new ResponseEntity(tiposService.findByNombreAproximateIgnoreCase(nombre), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -52,10 +52,10 @@ public class exa_rvc_unidadesController {
 
     @PostMapping("/")
     @ResponseBody
-    public ResponseEntity<?> create(@Valid @RequestBody exa_rvc_unidadesDto provinciasDto, BindingResult bindingResult) {
+    public ResponseEntity<?> create(@Valid @RequestBody exa_rvc_tiposDto provinciasDto, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
             try {
-                return new ResponseEntity(unidadesService.create(provinciasDto), HttpStatus.CREATED);
+                return new ResponseEntity(tiposService.create(provinciasDto), HttpStatus.CREATED);
             } catch (Exception e) {
                 return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
             }
@@ -66,12 +66,12 @@ public class exa_rvc_unidadesController {
 
     @PutMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<?> update(@PathVariable(value = "id") Long id, @Valid @RequestBody exa_rvc_unidadesDto unidadesDto, BindingResult bindingResult) {
+    public ResponseEntity<?> update(@PathVariable(value = "id") Long id, @Valid @RequestBody exa_rvc_tiposDto tiposDto, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
             try {
-                Optional<exa_rvc_unidadesDto> unidadesUpdated = unidadesService.update(unidadesDto, id);
-                if (unidadesUpdated.isPresent()) {
-                    return new ResponseEntity(unidadesUpdated, HttpStatus.OK);
+                Optional<exa_rvc_tiposDto> tiposUpdated = tiposService.update(tiposDto, id);
+                if (tiposUpdated.isPresent()) {
+                    return new ResponseEntity(tiposUpdated, HttpStatus.OK);
                 } else {
                     return new ResponseEntity(HttpStatus.NOT_FOUND);
                 }
@@ -86,7 +86,7 @@ public class exa_rvc_unidadesController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable(value = "id") Long id) {
         try {
-            unidadesService.delete(id);
+            tiposService.delete(id);
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);

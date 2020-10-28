@@ -5,6 +5,8 @@
  */
 package org.una.examen_rvc.dto;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,8 +24,10 @@ public class exa_rvc_unidadesDto {
 
     private Long id;
     private String nombre;
-    private String barrio;
-    private String comunidad;
-    private String calle;
+    private Integer codigo;
+    private BigDecimal area;
+    private BigInteger poblacion;
+    private exa_rvc_tiposDto tipos;
+    private exa_rvc_distritosDto distrito;
 
 }

@@ -5,6 +5,7 @@
  */
 package org.una.examen_rvc.entities;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,7 +32,7 @@ import lombok.ToString;
 @NoArgsConstructor
 
 @ToString
-public class exa_rvc_provincias {
+public class exa_rvc_provincias implements Serializable  {
       //faltan relaciones
 
     @Id
@@ -46,6 +47,6 @@ public class exa_rvc_provincias {
 
     @Column(name = "Código", length = 24)
 
-    private String Código;
+    private Integer Código;
 
 }

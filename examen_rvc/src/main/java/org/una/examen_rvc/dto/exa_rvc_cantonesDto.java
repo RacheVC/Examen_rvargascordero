@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.una.examen_rvc.entities.exa_rvc_provincias;
 
 /**
  *
@@ -22,5 +23,7 @@ public class exa_rvc_cantonesDto {
 
     private Long id;
     private String nombre;
+    private Integer codigo;
+    private exa_rvc_provinciasDto provincia;
 
 }

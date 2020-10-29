@@ -5,6 +5,8 @@
  */
 package org.una.examen_rvc.services;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -49,16 +51,18 @@ public class exa_rvc_cantonesServiceImplementation implements Iexa_rvc_cantonesS
     public Optional<List<exa_rvc_cantonesDto>> findByNombreAproximateIgnoreCase(String nombre) {
         return (Optional<List<exa_rvc_cantonesDto>>) Convert.findList(Optional.ofNullable(cantonesRepository.findByNombreContainingIgnoreCase(nombre)), exa_rvc_cantonesDto.class);
     }
-     @Override
-    public Optional<List<exa_rvc_cantonesDto>> findByCodigoAproximateIgnoreCase(Integer codigo) {
-        return (Optional<List<exa_rvc_cantonesDto>>) Convert.findList(Optional.ofNullable(cantonesRepository.findByCodigoContainingIgnoreCase(codigo)), exa_rvc_cantonesDto.class);
-    }
+//     @Override
+//    public Optional<List<exa_rvc_cantonesDto>> findByCodigoAproximateIgnoreCase(Integer codigo) {
+//        return (Optional<List<exa_rvc_cantonesDto>>) Convert.findList(Optional.ofNullable(cantonesRepository.findByCodigoContainingIgnoreCase(codigo)), exa_rvc_cantonesDto.class);
+//    }
 
     @Override
 
     public Optional<exa_rvc_cantonesDto> findByNombre(String nombre) {
         return (Optional<exa_rvc_cantonesDto>) Convert.oneToDto(Optional.ofNullable(cantonesRepository.findByNombre(nombre)), exa_rvc_cantonesDto.class);
     }
+
+
 
     @Override
     public Optional<exa_rvc_cantonesDto> findByCodigo(Integer codigo) {

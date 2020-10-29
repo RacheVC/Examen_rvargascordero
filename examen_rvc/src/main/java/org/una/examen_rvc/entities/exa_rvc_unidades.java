@@ -58,7 +58,7 @@ public class exa_rvc_unidades implements Serializable {
 
     @Column(name = "Código", length = 25)
 
-    private Integer Código;
+    private Integer codigo;
     @Column(name = "area", length = 24)
 
     private BigDecimal area;

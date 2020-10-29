@@ -53,10 +53,10 @@ public class exa_rvc_unidadesServiceImplementation implements Iexa_rvc_unidadesS
         return (Optional<List<exa_rvc_unidadesDto>>) Convert.findList(Optional.ofNullable(unidadesRepository.findByNombreContainingIgnoreCase(nombre)), exa_rvc_unidadesDto.class);
     }
 
-    @Override
-    public Optional<List<exa_rvc_unidadesDto>> findByCodigoAproximateIgnoreCase(Integer codigo) {
-        return (Optional<List<exa_rvc_unidadesDto>>) Convert.findList(Optional.ofNullable(unidadesRepository.findByCodigoContainingIgnoreCase(codigo)), exa_rvc_unidadesDto.class);
-    }
+//    @Override
+//    public Optional<List<exa_rvc_unidadesDto>> findByCodigoAproximateIgnoreCase(Integer codigo) {
+//        return (Optional<List<exa_rvc_unidadesDto>>) Convert.findList(Optional.ofNullable(unidadesRepository.findByCodigoContainingIgnoreCase(codigo)), exa_rvc_unidadesDto.class);
+//    }
 
     @Override
 

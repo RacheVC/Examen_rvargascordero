@@ -51,6 +51,6 @@ public class exa_rvc_distritos implements Serializable {
 
     @Column(name = "Código", length = 24)
 
-    private Integer Código;
+    private Integer codigo;
     
 }

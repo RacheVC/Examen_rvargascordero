@@ -19,7 +19,7 @@ public interface exa_rvc_unidadesRepository extends JpaRepository<exa_rvc_unidad
 
     public List<exa_rvc_unidades> findByNombreContainingIgnoreCase(String nombre);
 
-    public List<exa_rvc_unidades> findByCodigoContainingIgnoreCase(Integer codigo);
+//    public List<exa_rvc_unidades> findByCodigoContainingIgnoreCase(Integer codigo);
 
     public exa_rvc_unidades findByNombre(String nombre);
 

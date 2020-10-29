@@ -5,6 +5,8 @@
  */
 package org.una.examen_rvc.services;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -45,14 +47,18 @@ public class exa_rvc_distritosServiceImplementation implements Iexa_rvc_distrito
             return null;
         }
     }
-   @Override
+
+    @Override
     public Optional<List<exa_rvc_distritosDto>> findByNombreAproximateIgnoreCase(String nombre) {
         return (Optional<List<exa_rvc_distritosDto>>) Convert.findList(Optional.ofNullable(distritosRepository.findByNombreContainingIgnoreCase(nombre)), exa_rvc_distritosDto.class);
     }
-     @Override
-    public Optional<List<exa_rvc_distritosDto>> findByCodigoAproximateIgnoreCase(Integer codigo) {
-        return (Optional<List<exa_rvc_distritosDto>>) Convert.findList(Optional.ofNullable(distritosRepository.findByCodigoContainingIgnoreCase(codigo)), exa_rvc_distritosDto.class);
-    }
+
+
+//     @Override
+//    public Optional<List<exa_rvc_distritosDto>> findByCodigoAproximateIgnoreCase(Integer codigo) {
+//        return (Optional<List<exa_rvc_distritosDto>>) Convert.findList(Optional.ofNullable(distritosRepository.findByCodigoContainingIgnoreCase(codigo)), exa_rvc_distritosDto.class);
+//    }
+
     @Override
 
     public Optional<exa_rvc_distritosDto> findByNombre(String nombre) {

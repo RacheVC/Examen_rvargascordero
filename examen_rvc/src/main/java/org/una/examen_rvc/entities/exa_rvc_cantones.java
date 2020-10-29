@@ -52,6 +52,6 @@ public class exa_rvc_cantones implements Serializable {
 
     @Column(name = "Código", length = 24)
 
-    private Integer Código;
+    private Integer codigo;
 
 }

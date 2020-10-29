@@ -5,6 +5,8 @@
  */
 package org.una.examen_rvc.repositories;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.una.examen_rvc.entities.exa_rvc_cantones;
@@ -17,10 +19,11 @@ public interface exa_rvc_cantonesRepository extends JpaRepository<exa_rvc_canton
 
     public List<exa_rvc_cantones> findByNombreContainingIgnoreCase(String nombre);
 
-    public List<exa_rvc_cantones> findByCodigoContainingIgnoreCase(Integer codigo);
-
+//    public List<exa_rvc_cantones> findByCodigoContainingIgnoreCase(Integer codigo);
     public exa_rvc_cantones findByNombre(String nombre);
 
     public exa_rvc_cantones findByCodigo(Integer codigo);
+
+    
 
 }

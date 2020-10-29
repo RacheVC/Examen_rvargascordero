@@ -19,7 +19,7 @@ public interface Iexa_rvc_unidadesService {
 
     public Optional<List<exa_rvc_unidadesDto>> findByNombreAproximateIgnoreCase(String nombre);
 
-    public Optional<List<exa_rvc_unidadesDto>> findByCodigoAproximateIgnoreCase(Integer codigo);
+//    public Optional<List<exa_rvc_unidadesDto>> findByCodigoAproximateIgnoreCase(Integer codigo);
 
     public Optional<exa_rvc_unidadesDto> findByNombre(String nombre);
 

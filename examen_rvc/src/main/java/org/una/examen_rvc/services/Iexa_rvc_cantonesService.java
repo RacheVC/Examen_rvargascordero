@@ -5,6 +5,8 @@
  */
 package org.una.examen_rvc.services;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 import org.una.examen_rvc.dto.exa_rvc_cantonesDto;
@@ -17,11 +19,12 @@ public interface Iexa_rvc_cantonesService {
 
     public Optional<List<exa_rvc_cantonesDto>> findByNombreAproximateIgnoreCase(String nombre);
 
-    public Optional<List<exa_rvc_cantonesDto>> findByCodigoAproximateIgnoreCase(Integer codigo);
-
+//    public Optional<List<exa_rvc_cantonesDto>> findByCodigoAproximateIgnoreCase(Integer codigo);
     public Optional<exa_rvc_cantonesDto> findByNombre(String nombre);
 
     public Optional<exa_rvc_cantonesDto> findByCodigo(Integer codigo);
+
+ ;
 
     public void delete(Long id);
 
